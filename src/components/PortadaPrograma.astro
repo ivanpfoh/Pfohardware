@@ -9,13 +9,14 @@ import { COMPRAR } from "../consts";
 ---
 <section class="portada" id="optimizador" aria-labelledby="portada-titulo">
   <div class="contenedor">
-    <Ventana class="portada-ventana" pagina>
+    <Ventana class="portada-ventana" pagina titulo="Demostración · Optimizador PfoHardware">
       <div class="pp" data-pp data-estado="reposo" data-modo="completa">
         <div class="pp-cabeza">
           <img class="pp-logo" src="img/logo-ph-96.png" alt="" width="56" height="56" />
           <div class="pp-nombre">
             <h1 id="portada-titulo" data-titulo><span class="linea"><span>Tu PC, más fluida</span></span><span class="linea"><span>con un clic.</span></span></h1>
             <p data-entra>Optimizador PfoHardware para Windows 10 y 11</p>
+            <p class="pp-aviso" data-entra><strong>Esto es una demostración:</strong> tocá Optimizar ahora para ver cómo funciona. Para usarlo en tu PC, compralo y descargalo.</p>
           </div>
         </div>
 
@@ -202,6 +203,8 @@ import { COMPRAR } from "../consts";
   .pp-cabeza { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: clamp(14px, 1.6vw, 22px); align-items: start; }
   .pp-logo { width: clamp(40px, 4.2vw, 56px); height: auto; margin-top: 0.35em; }
   .pp-nombre h1 { font-size: clamp(2.1rem, 3.7vw, 3.5rem); line-height: 0.98; letter-spacing: -0.04em; }
+  .pp-aviso { display: inline-block; margin-top: 12px !important; padding: 8px 12px; border-radius: 10px; background: #0C2A23; color: var(--texto) !important; font-size: 0.95rem !important; }
+  .pp-aviso strong { color: var(--marca-1); }
   .pp-nombre p { margin: 8px 0 0; color: var(--texto-dim); font-size: clamp(0.95rem, 1.2vw, 1.12rem); }
   .pp-precio { margin: 0; display: grid; justify-items: end; text-align: right; line-height: 1.05; }
   .pp-precio strong { font: 600 clamp(1.7rem, 3.1vw, 3rem)/1 var(--letra-titulo); letter-spacing: -0.035em; }
@@ -209,7 +212,7 @@ import { COMPRAR } from "../consts";
 
   .pp-campo {
     /* En escritorio el campo toma el alto que sobra para que la ventana entre entera en la pantalla */
-    position: relative; container-type: size; height: clamp(180px, calc(100svh - 596px), 400px);
+    position: relative; container-type: size; height: clamp(180px, calc(100svh - 664px), 400px);
     margin: clamp(8px, 0.9vw, 12px) calc(clamp(18px, 3vw, 44px) * -1) 0;
     background-image: radial-gradient(rgba(36, 50, 56, 0.85) 0.3cqh, transparent 0.345cqh), radial-gradient(closest-side, rgba(18, 232, 214, 0.07), transparent); /* taste-skill-ignore: campo de puntos del programa (pieza data-ui) */
     background-size: 4cqh 4cqh, 60% 100%;
