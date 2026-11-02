@@ -1,0 +1,64 @@
+---
+// Portada con bienvenida: el texto a la izquierda y, a la derecha, el video de HyperFrames
+// (_motion/hero-optimizador): el logo PH grande que se convierte en el Optimizador optimizando.
+// Se reproduce una vez al verse y queda en "Optimización completada".
+import Icono from "./Icono.astro";
+import { COMPRAR, MAIL_CONSULTA } from "../consts";
+---
+<section class="portada" id="optimizador" aria-labelledby="portada-titulo">
+  <div class="contenedor portada-grilla">
+    <div class="portada-texto">
+      <p class="bienvenida" data-entra>Bienvenido a PfoHardware</p>
+      <h1 id="portada-titulo" data-titulo><span class="linea"><span>Tu PC, más fluida</span></span><span class="linea"><span>con un clic.</span></span></h1>
+      <p class="bajada" data-entra>Soy Iván Pfoh. Hice el Optimizador PfoHardware para que tu PC con Windows 10 u 11 ande más liviana, sin saber de computación. Y si preferís que la revise yo, también hago servicio técnico en Recoleta.</p>
+      <div class="acciones" data-entra>
+        <a class="boton boton-marca boton-grande" href={COMPRAR}>Comprar el Optimizador <Icono nombre="flecha" tam={18} /></a>
+        <a class="boton boton-panel boton-grande" href={MAIL_CONSULTA}>Pedir presupuesto</a>
+      </div>
+      <ul class="checks" data-entra>
+        <li><Icono nombre="check" tam={16} grosor={2.6} />Un clic, y se puede deshacer</li>
+        <li><Icono nombre="check" tam={16} grosor={2.6} />Pago único</li>
+        <li><Icono nombre="check" tam={16} grosor={2.6} />Soporte directo conmigo</li>
+      </ul>
+    </div>
+    <figure class="portada-video" data-entra>
+      <video data-portada muted playsinline preload="auto" disablepictureinpicture
+        poster="img/motion/hero-optimizador-inicio.webp" width="900" height="966"
+        aria-label="El logo PfoHardware se convierte en el Optimizador: un clic en Optimizar ahora y queda Optimización completada.">
+        <source src="img/motion/hero-optimizador.mp4" type="video/mp4" />
+      </video>
+    </figure>
+  </div>
+</section>
+
+<script>
+  import { ahorroDatos, moverPoco } from "../scripts/base";
+  const v = document.querySelector<HTMLVideoElement>("[data-portada]");
+  if (v) {
+    const final = (): void => { v.poster = "img/motion/hero-optimizador-final.webp"; };
+    if (moverPoco() || ahorroDatos()) { v.preload = "none"; final(); }
+    else {
+      v.addEventListener("error", final, true);
+      // Una pausa para que el logo se vea grande antes de que arranque
+      window.setTimeout(() => { v.play().catch(final); }, 900);
+    }
+  }
+</script>
+
+<style>
+  .portada { padding: calc(var(--header) + clamp(32px, 5vw, 72px)) 0 clamp(56px, 7vw, 96px); background: var(--campo-1); }
+  .portada-grilla { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+  .bienvenida { margin: 0 0 18px; color: var(--marca-1); font-weight: 600; font-size: 1.05rem; }
+  .bajada { margin-top: 28px; max-width: 32em; font-size: 1.12rem; }
+  .acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .checks { list-style: none; display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 28px; color: var(--texto-dim); font-weight: 600; font-size: 0.95rem; }
+  .checks li { display: inline-flex; align-items: center; gap: 8px; }
+  .checks :global(svg) { color: var(--marca-1); }
+  .portada-video { margin: 0; justify-self: center; width: 100%; max-width: 480px; }
+  .portada-video video { width: 100%; aspect-ratio: 900 / 966; border-radius: var(--radio-ventana); background: var(--fondo); border: 1px solid var(--borde); }
+  @media (max-width: 900px) {
+    .portada-grilla { grid-template-columns: 1fr; }
+    .acciones .boton { flex: 1 1 100%; }
+    .portada-video { max-width: 420px; }
+  }
+</style>
