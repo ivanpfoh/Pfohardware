@@ -58,6 +58,19 @@ test("los links de compra y de recuperación son los de siempre", async ({ page 
   expect(html.toLowerCase()).not.toContain("dropbox");
 });
 
+test("Más herramientas: cada herramienta muestra su pantalla del programa", async ({ page }) => {
+  await page.goto("index.html#herramientas");
+  const activa = page.locator("#herramientas [data-pantalla].activa");
+  await expect(activa).toHaveAttribute("data-pantalla", "lista");
+  for (const id of ["discos", "salud", "bateria", "mejorar"]) {
+    const boton = page.locator(`[data-herramienta="${id}"]`);
+    await boton.click();
+    await expect(activa).toHaveAttribute("data-pantalla", id);
+    await expect(boton).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("#herramientas [data-pantalla].activa")).toHaveCount(1);
+  }
+});
+
 test("descarga muestra el hash del zip y version.json responde", async ({ page, request }) => {
   await page.goto("descarga.html");
   await expect(page.locator("[data-hash]")).toHaveText(/^[0-9A-F]{64}$/);

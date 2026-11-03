@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import PortadaBienvenida from "../components/PortadaBienvenida.astro";
 import ComoFunciona from "../components/ComoFunciona.astro";
 import Seguro from "../components/Seguro.astro";
+import MasHerramientas from "../components/MasHerramientas.astro";
 import Compra from "../components/Compra.astro";
 import Preguntas from "../components/Preguntas.astro";
 import ServicioInicio from "../components/ServicioInicio.astro";
@@ -37,6 +38,7 @@ const datos = {
   <PortadaBienvenida />
   <ComoFunciona />
   <Seguro />
+  <MasHerramientas />
   <Compra />
 
   <section class="dudas" aria-labelledby="dudas-titulo">
@@ -64,6 +66,14 @@ const datos = {
           <details>
             <summary>¿Lo uso una sola vez?</summary>
             <div class="faq-cuerpo"><p>No hace falta: podés volver a usarlo cada tanto para mantener tu PC estable y rápida. Con el uso, Windows vuelve a acumular cosas, y repetir la optimización lo deja en orden otra vez. El programa te avisa cuando pasó un mes desde la última vez.</p></div>
+          </details>
+          <details>
+            <summary>¿Desfragmenta el disco?</summary>
+            <div class="faq-cuerpo"><p>Si es un disco mecánico (HDD), sí: desde el engranaje, en <strong>Desfragmentar y optimizar discos</strong>, te muestra cuánto está fragmentado y te avisa que puede tardar. Si es un disco sólido (SSD), no se desfragmenta: se optimiza en segundos.</p></div>
+          </details>
+          <details>
+            <summary>¿Qué programas deja de abrir al prender la PC?</summary>
+            <div class="faq-cuerpo"><p>Juegos, lanzadores, chats y apps que no hace falta que arranquen solas: siguen andando cuando los abrís. Nunca toca los programas de tus drivers, del audio, del video ni del antivirus. Y desde <strong>Programas de inicio</strong> podés volver a prender cualquiera.</p></div>
           </details>
           <details>
             <summary>¿Y si después no me gusta cómo queda?</summary>

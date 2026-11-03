@@ -4,15 +4,15 @@ import Preguntas from "../components/Preguntas.astro";
 import { COMPRAR, EMAIL, INSTAGRAM, RECUPERAR } from "../consts";
 
 // Huella del archivo oficial: se actualiza en cada versión (build_nuitka.bat la muestra al compilar).
-const VERSION = "v2.9.3";
-const HASH = "0A14C22916F4995EA83C297693117CC20C09AE4818D720F05CC182747BCBC231";
+const VERSION = "v2.10.0";
+const HASH = "6B58C4CAF068A07B29F57F7C6F499469B3D12F0B3312BE1E556238A12351BA71";
 
 // Pantallas reales del programa (cuadros del video de HyperFrames y una captura del programa)
 const pantallas = [
   { src: "img/motion/hero-optimizador-programa.webp", alt: "El Optimizador abierto: Tu PC está lista para optimizar", texto: "Al abrirlo: elegís el modo y tocás Optimizar ahora." },
   { src: "img/motion/hero-optimizador-optimizando.webp", alt: "El Optimizador trabajando: el anillo de progreso y Optimizando tu PC", texto: "Mientras trabaja: el anillo avanza hasta el 100 %." },
   { src: "img/motion/hero-optimizador-final.webp", alt: "El Optimizador al terminar: Optimización completada, con Deshacer cambios", texto: "Al terminar: si algo no te gusta, Deshacer cambios." },
-  { src: "img/optimizador-app.webp", alt: "El Optimizador abierto otra vez, con la fecha de la última optimización", texto: "Cuando lo volvés a abrir, te muestra la última optimización." },
+  { src: "img/optimizador-app.webp", alt: "El Optimizador abierto otra vez, con la fecha de la última optimización y el engranaje arriba a la derecha", texto: "Cuando lo volvés a abrir, te muestra la última optimización. Arriba a la derecha, el engranaje con Más herramientas." },
 ];
 ---
 <Base

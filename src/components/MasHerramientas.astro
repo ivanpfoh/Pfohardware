@@ -1,0 +1,126 @@
+---
+// Más herramientas: el engranaje del programa (v2.10). La pantalla principal sigue siendo un botón; el engranaje
+// abre estas herramientas. Cada una de la lista muestra a la derecha su pantalla real (capturas con datos de ejemplo).
+import Icono from "./Icono.astro";
+
+const herramientas = [
+  {
+    id: "discos", icono: "disco", nombre: "Desfragmentar y optimizar discos",
+    texto: "Ordena los discos mecánicos (HDD) y optimiza los sólidos (SSD). Antes te dice cuánto está fragmentado y cuánto puede tardar.",
+    img: "img/herramientas/discos.webp",
+    alt: "Desfragmentar y optimizar discos: un disco mecánico 23 % fragmentado con el botón Desfragmentar, y un SSD con el botón Optimizar",
+  },
+  {
+    id: "salud", icono: "pulso", nombre: "Salud de los discos",
+    texto: "Estado, temperatura, horas de uso y desgaste de cada disco, para saber a tiempo si conviene cambiarlo.",
+    img: "img/herramientas/salud-discos.webp",
+    alt: "Salud de los discos: dos discos en Bien, con su temperatura, horas de uso y desgaste",
+  },
+  {
+    id: "bateria", icono: "bateria", nombre: "Batería",
+    texto: "En notebooks: cuánto carga hoy de lo que cargaba nueva, y si ya conviene cambiarla.",
+    img: "img/herramientas/bateria.webp",
+    alt: "Batería: el anillo en 63 % y el aviso Se nota el desgaste",
+  },
+  {
+    id: "mejorar", icono: "mejorar", nombre: "Qué conviene mejorar",
+    texto: "Si tu PC necesita un SSD, más RAM o un segundo módulo, te lo dice. Y si no hace falta nada, también.",
+    img: "img/herramientas/que-conviene-mejorar.webp",
+    alt: "Qué conviene mejorar: la PC con 4 GB de RAM y disco mecánico, y tres recomendaciones con el botón Pedir presupuesto",
+  },
+] as const;
+---
+<section class="herramientas" id="herramientas" aria-labelledby="herramientas-titulo">
+  <div class="contenedor h-grilla">
+    <div class="h-texto">
+      <h2 id="herramientas-titulo" data-titulo><span class="linea"><span>Y si querés más,</span></span><span class="linea"><span>tocá el engranaje.</span></span></h2>
+      <p class="h-bajada" data-entra>La pantalla principal sigue siendo un botón. Arriba a la derecha, un engranaje discreto <Icono nombre="engranaje" tam={18} class="h-engranaje" /> abre <strong>Más herramientas</strong>. Ninguna se usa sola: solo cuando la elegís.</p>
+      <ul class="h-lista" data-herramientas>
+        {herramientas.map((h) => (
+          <li data-entra>
+            <button type="button" aria-pressed="false" aria-controls="h-pantalla" data-herramienta={h.id}>
+              <span class="h-icono"><Icono nombre={h.icono} tam={20} /></span>
+              <span class="h-textos">
+                <span class="h-nombre">{h.nombre}</span>
+                <span class="h-detalle">{h.texto}</span>
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <figure class="h-pantalla" id="h-pantalla" data-entra data-ui>
+      <div class="h-capturas">
+        <img class="activa" src="img/herramientas/mas-herramientas.webp" data-pantalla="lista" width="916" height="975" loading="lazy" decoding="async"
+          alt="Más herramientas en el Optimizador: Desfragmentar y optimizar discos, Salud de los discos, Batería y Qué conviene mejorar" />
+        {herramientas.map((h) => (
+          <img src={h.img} data-pantalla={h.id} alt={h.alt} aria-hidden="true" width="916" height="975" loading="lazy" decoding="async" />
+        ))}
+      </div>
+      <figcaption>Pantallas reales del programa, con datos de ejemplo. Tocá cada herramienta para ver la suya.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<script>
+  // Cada herramienta muestra su pantalla. Con mouse alcanza con pasar por encima; en el celular, tocarla.
+  const lista = document.querySelector<HTMLElement>("[data-herramientas]");
+  const pantallas = [...document.querySelectorAll<HTMLImageElement>("[data-pantalla]")];
+  if (lista && pantallas.length) {
+    const botones = [...lista.querySelectorAll<HTMLButtonElement>("[data-herramienta]")];
+    const mostrar = (id: string): void => {
+      pantallas.forEach((img) => {
+        const activa = img.dataset.pantalla === id;
+        img.classList.toggle("activa", activa);
+        img.setAttribute("aria-hidden", activa ? "false" : "true");
+      });
+      botones.forEach((b) => b.setAttribute("aria-pressed", b.dataset.herramienta === id ? "true" : "false"));
+    };
+    botones.forEach((b) => {
+      b.addEventListener("click", () => mostrar(b.dataset.herramienta ?? "lista"));
+      b.addEventListener("focus", () => mostrar(b.dataset.herramienta ?? "lista"));
+      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        b.addEventListener("pointerenter", () => mostrar(b.dataset.herramienta ?? "lista"));
+      }
+    });
+  }
+</script>
+
+<style>
+  .herramientas { padding-block: var(--seccion); background: var(--campo-2); scroll-margin-top: var(--header); }
+  .h-grilla { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: clamp(36px, 7vw, 120px); align-items: center; }
+  .h-bajada { margin-top: 28px; max-width: 32em; font-size: 1.12rem; }
+  .h-bajada strong { color: var(--marca-1); }
+  .h-bajada :global(.h-engranaje) { display: inline-block; vertical-align: -3px; color: var(--texto-dim); }
+  .h-lista { list-style: none; display: grid; gap: 6px; margin-top: clamp(28px, 4vw, 48px); }
+  .h-lista button {
+    display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start; width: 100%; padding: 16px 18px;
+    border: 0; border-radius: var(--radio); background: transparent; text-align: left; cursor: pointer;
+    transition: background-color 250ms ease, transform 160ms var(--ease-out);
+  }
+  .h-lista button:active { transform: scale(0.98); }
+  .h-icono { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 10px; background: var(--panel); color: var(--marca-1); transition: background-color 250ms ease; }
+  .h-nombre { display: block; font: 600 clamp(1.1rem, 1.5vw, 1.3rem)/1.25 var(--letra-titulo); letter-spacing: -0.015em; }
+  .h-detalle { display: block; margin-top: 4px; color: var(--texto-dim); font-size: 0.98rem; line-height: 1.5; text-wrap: pretty; }
+  .h-lista button[aria-pressed="true"] { background: #0C2A23; }
+  .h-lista button[aria-pressed="true"] .h-icono { background: var(--fondo); }
+  @media (hover: hover) and (pointer: fine) {
+    .h-lista button:hover { background: #0C2A23; }
+  }
+  .h-pantalla { margin: 0; justify-self: center; width: 100%; max-width: 520px; }
+  .h-capturas { position: relative; aspect-ratio: 916 / 975; border-radius: var(--radio-ventana); overflow: hidden; border: 1px solid var(--borde); background: var(--fondo);
+    box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.85); } /* taste-skill-ignore: ventana del programa: Windows le pone sombra a sus ventanas */
+  .h-capturas img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 320ms ease; }
+  .h-capturas img.activa { opacity: 1; }
+  .h-pantalla figcaption { margin-top: 14px; color: var(--texto-dim); font-size: var(--t-chico); }
+  @media (prefers-reduced-motion: reduce) { .h-capturas img { transition: none; } }
+  /* En el celular la pantalla va antes de la lista: al tocar una herramienta se ve el cambio */
+  @media (max-width: 900px) {
+    .h-grilla { grid-template-columns: 1fr; gap: 0; }
+    .h-texto { display: contents; }
+    .h-texto h2 { order: 1; }
+    .h-bajada { order: 2; }
+    .h-pantalla { order: 3; max-width: 440px; margin-top: 32px; }
+    .h-lista { order: 4; }
+  }
+</style>
