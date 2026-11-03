@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-const PAGINAS = ["index.html", "servicios.html", "quiensoy.html", "contacto.html", "descarga.html"];
+const PAGINAS = ["index.html", "programas.html", "servicios.html", "quiensoy.html", "contacto.html", "descarga.html"];
 const COMPRAR = "https://script.google.com/macros/s/AKfycbyr9_yR_DE78hONf0mHfDxOg-oL7I5zdVxnt41NdRxakUYWLjaT5GJ92_GQ05ACSTOt/exec?accion=comprar";
 const RECUPERAR = "https://script.google.com/macros/s/AKfycbyr9_yR_DE78hONf0mHfDxOg-oL7I5zdVxnt41NdRxakUYWLjaT5GJ92_GQ05ACSTOt/exec?accion=recuperar";
 

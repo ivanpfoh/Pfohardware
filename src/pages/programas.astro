@@ -1,0 +1,64 @@
+---
+import Base from "../layouts/Base.astro";
+import Icono from "../components/Icono.astro";
+import { COMPRAR } from "../consts";
+
+// Los programas en venta. Por ahora solo el Optimizador; los que vengan se suman a esta lista.
+const programas = [
+  {
+    nombre: "Optimizador PfoHardware",
+    texto: "Deja tu PC con Windows 10 u 11 más fluida con un clic. Es fácil de usar, se puede deshacer y lo podés volver a usar cada tanto para mantenerla estable y rápida.",
+    imagen: { src: "img/motion/hero-optimizador-final.webp", alt: "El Optimizador al terminar: Optimización completada" },
+    conocer: "index.html#optimizador",
+    comprar: COMPRAR,
+  },
+];
+---
+<Base
+  titulo="Programas · PfoHardware"
+  descripcion="Los programas de PfoHardware para Windows, hechos por Iván Pfoh. El principal: el Optimizador PfoHardware."
+  ruta="programas.html"
+  actual="programas"
+>
+  <section class="arriba" aria-labelledby="programas-titulo">
+    <div class="contenedor">
+      <h1 id="programas-titulo" data-titulo><span class="linea"><span>Mis programas</span></span></h1>
+      <p class="bajada" data-entra>Programas para Windows que hice y uso en mis propios equipos. Pago único y soporte directo conmigo.</p>
+
+      <ul class="programas">
+        {programas.map((p) => (
+          <li class="programa" data-entra>
+            <img src={p.imagen.src} alt={p.imagen.alt} width="900" height="966" loading="lazy" decoding="async" />
+            <div class="programa-texto">
+              <h2>{p.nombre}</h2>
+              <p>{p.texto}</p>
+              <div class="acciones">
+                <a class="boton boton-marca boton-grande" href={p.comprar}>Comprar <Icono nombre="flecha" tam={18} /></a>
+                <a class="boton boton-panel boton-grande" href={p.conocer}>Conocerlo</a>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <p class="pronto" data-entra>Pronto se van a sumar más.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .arriba { padding: calc(var(--header) + clamp(56px, 8vw, 112px)) 0 clamp(72px, 9vw, 128px); background: var(--campo-1); }
+  .arriba h1 { font-size: clamp(2.2rem, 5.2vw, 4.8rem); }
+  .bajada { margin-top: 24px; max-width: 34em; font-size: 1.15rem; }
+  .programas { list-style: none; display: grid; gap: 24px; margin-top: clamp(40px, 5vw, 72px); }
+  .programa { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: clamp(24px, 4vw, 56px); align-items: center; padding: clamp(20px, 3vw, 36px); border-radius: var(--radio-ventana); background: var(--panel); }
+  .programa img { width: 100%; max-width: 340px; aspect-ratio: 900 / 966; border-radius: var(--radio); border: 1px solid var(--borde); background: var(--fondo); }
+  .programa h2 { font-size: clamp(1.6rem, 2.8vw, 2.4rem); }
+  .programa p { margin-top: 14px; max-width: 32em; font-size: 1.1rem; }
+  .acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .pronto { margin-top: 24px; color: var(--texto-dim); font-weight: 600; }
+  @media (max-width: 900px) {
+    .programa { grid-template-columns: 1fr; }
+    .programa img { justify-self: center; }
+    .acciones .boton { flex: 1 1 100%; }
+  }
+</style>
