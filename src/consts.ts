@@ -10,7 +10,7 @@ export const EMAIL = "ivanpfohh85@gmail.com";
 export const INSTAGRAM = "https://instagram.com/pfohardware";
 export const GITHUB = "https://github.com/ivanpfoh";
 export const PRECIO = "$10.000";
-export const SITIO = "https://ivanpfoh.github.io/Pfohardware-pagina/";
+export const SITIO = "https://ivanpfoh.github.io/Pfohardware/";
 
 // Mail con una guía para la consulta del servicio técnico
 export const MAIL_CONSULTA = `mailto:${EMAIL}?subject=${encodeURIComponent("Consulta desde la web")}&body=${encodeURIComponent(

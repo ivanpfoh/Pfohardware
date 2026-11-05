@@ -9,7 +9,7 @@ export default defineConfig({
   retries: 0,
   reporter: [["list"]],
   use: {
-    baseURL: "http://localhost:4321/Pfohardware-pagina/",
+    baseURL: "http://localhost:4321/Pfohardware/",
     channel: "chrome",
     trace: "retain-on-failure",
   },
@@ -20,7 +20,7 @@ export default defineConfig({
   ],
   webServer: {
     command: "npx astro build && npx astro preview --port 4321",
-    url: "http://localhost:4321/Pfohardware-pagina/",
+    url: "http://localhost:4321/Pfohardware/",
     reuseExistingServer: true,
     timeout: 180_000,
   },

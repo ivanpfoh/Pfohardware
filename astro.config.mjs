@@ -2,12 +2,12 @@
 import { defineConfig } from "astro/config";
 import buscadores from "./integraciones/buscadores.mjs";
 
-// GitHub Pages publica el repo en https://ivanpfoh.github.io/Pfohardware-pagina/
+// GitHub Pages publica el repo en https://ivanpfoh.github.io/Pfohardware/
 // Las páginas salen como archivos .html (servicios.html, descarga.html...) porque el Optimizador
 // abre descarga.html y lee version.json en esas mismas direcciones.
 export default defineConfig({
   site: "https://ivanpfoh.github.io",
-  base: "/Pfohardware-pagina",
+  base: "/Pfohardware",
   trailingSlash: "ignore",
   build: {
     format: "file",
@@ -16,7 +16,7 @@ export default defineConfig({
   },
   compressHTML: true,
   devToolbar: { enabled: false },
-  integrations: [buscadores({ sitio: "https://ivanpfoh.github.io/Pfohardware-pagina/" })],
+  integrations: [buscadores({ sitio: "https://ivanpfoh.github.io/Pfohardware/" })],
   vite: {
     build: { cssMinify: "lightningcss" },
   },
