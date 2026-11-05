@@ -96,8 +96,10 @@
   .pasos.guiado .paso { opacity: 0.4; }
   .pasos.guiado .paso.activo { opacity: 1; }
   .pasos.guiado .paso.activo::before, .pasos:not(.guiado) .paso::before { background: var(--degrade); color: var(--texto-marca); }
-  .requisitos { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; margin-top: clamp(48px, 6vw, 80px); padding: 24px; border-radius: var(--radio-ventana); background: var(--panel); }
-  .requisitos li { color: var(--texto-dim); }
+  /* Cada requisito en su propio recuadro con borde, para que no quede flotando sobre el fondo */
+  .requisitos { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: clamp(48px, 6vw, 80px); }
+  .requisitos li { position: relative; padding: 16px 18px 16px 38px; border: 1px solid var(--borde); border-radius: var(--radio); background: var(--fondo); color: var(--texto-dim); }
+  .requisitos li::before { content: ""; position: absolute; left: 18px; top: calc(16px + 0.8em - 4px); width: 8px; height: 8px; border-radius: 50%; background: var(--degrade); }
   .requisitos strong { color: var(--texto); }
   @media (max-width: 900px) {
     .como-grilla { grid-template-columns: 1fr; }
