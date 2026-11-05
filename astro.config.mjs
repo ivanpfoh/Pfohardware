@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import buscadores from "./integraciones/buscadores.mjs";
 
 // GitHub Pages publica el repo en https://ivanpfoh.github.io/Pfohardware-pagina/
 // Las páginas salen como archivos .html (servicios.html, descarga.html...) porque el Optimizador
@@ -15,6 +16,7 @@ export default defineConfig({
   },
   compressHTML: true,
   devToolbar: { enabled: false },
+  integrations: [buscadores({ sitio: "https://ivanpfoh.github.io/Pfohardware-pagina/" })],
   vite: {
     build: { cssMinify: "lightningcss" },
   },

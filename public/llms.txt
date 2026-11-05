@@ -1,0 +1,29 @@
+# PfoHardware
+
+> PfoHardware es el emprendimiento de Iván Pfoh, técnico de PC y notebooks en Recoleta, Ciudad Autónoma de Buenos Aires (Argentina). Vende el Optimizador PfoHardware, un programa para Windows 10 y 11, y hace servicio técnico de PCs y notebooks.
+
+## Optimizador PfoHardware
+
+- Programa para Windows 10 y 11 (64 bits) que deja la PC más fluida con un clic.
+- Es fácil de usar, pensado para quien nunca tocó la configuración de su PC.
+- Tiene dos modos: Optimización completa y Solo juegos.
+- Todo lo que cambia se puede deshacer con el botón Deshacer cambios.
+- Se puede volver a usar cada tanto para mantener la PC estable y rápida; el programa avisa cuando pasó un mes desde la última vez.
+- En su engranaje trae más herramientas: desfragmentar y optimizar discos, ver la salud de los discos y de la batería, y saber qué conviene mejorar.
+- Requisitos: Windows 10 u 11 de 64 bits, procesador Intel o AMD, 2 GB de RAM o más y permiso de administrador.
+- Pago único de $10.000 (pesos argentinos) por Mercado Pago, licencia para una PC, con actualizaciones y soporte directo con Iván. Hay 10 días corridos para arrepentirse de la compra.
+- Página del producto y compra: https://ivanpfoh.github.io/Pfohardware-pagina/
+
+## Servicio técnico
+
+- Diagnóstico, limpieza y refrigeración, upgrades, formateo, reparación de componentes y soporte remoto para PCs y notebooks.
+- Zona: Recoleta, Capital Federal (Buenos Aires, Argentina).
+- Servicios: https://ivanpfoh.github.io/Pfohardware-pagina/servicios.html
+
+## Más
+
+- Programas: https://ivanpfoh.github.io/Pfohardware-pagina/programas.html
+- Quién es Iván Pfoh: https://ivanpfoh.github.io/Pfohardware-pagina/quiensoy.html
+- Contacto: https://ivanpfoh.github.io/Pfohardware-pagina/contacto.html
+- Mail: ivanpfohh85@gmail.com
+- Instagram: https://instagram.com/pfohardware

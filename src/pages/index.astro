@@ -10,11 +10,12 @@ import ServicioInicio from "../components/ServicioInicio.astro";
 import Trabajos from "../components/Trabajos.astro";
 import CierreServicio from "../components/CierreServicio.astro";
 import Visor from "../components/Visor.astro";
-import { EMAIL, INSTAGRAM, SITIO } from "../consts";
+import { EMAIL, GITHUB, INSTAGRAM, PRECIO, SITIO } from "../consts";
 
-const datos = {
-  "@context": "https://schema.org",
+// Para Google y los asistentes de IA: el negocio, el sitio y el Optimizador como producto
+const negocio = {
   "@type": "LocalBusiness",
+  "@id": SITIO + "#negocio",
   name: "PfoHardware",
   description: "Servicio técnico de PCs y notebooks: diagnóstico, mantenimiento, upgrades y soporte. Optimizador de Sistema para Windows.",
   url: SITIO,
@@ -24,7 +25,26 @@ const datos = {
   address: { "@type": "PostalAddress", addressLocality: "Recoleta", addressRegion: "Ciudad Autónoma de Buenos Aires", addressCountry: "AR" },
   areaServed: "Ciudad Autónoma de Buenos Aires",
   founder: { "@type": "Person", name: "Iván Pfoh" },
-  sameAs: [INSTAGRAM],
+  sameAs: [INSTAGRAM, GITHUB],
+};
+const datos = {
+  "@context": "https://schema.org",
+  "@graph": [
+    negocio,
+    { "@type": "WebSite", "@id": SITIO + "#sitio", name: "PfoHardware", url: SITIO, inLanguage: "es-AR", publisher: { "@id": SITIO + "#negocio" } },
+    {
+      "@type": "SoftwareApplication",
+      name: "Optimizador PfoHardware",
+      description: "Programa para Windows 10 y 11 que deja la PC más fluida con un clic. Fácil de usar, se puede deshacer y trae herramientas para los discos y la batería.",
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "Windows 10, Windows 11 (64 bits)",
+      url: SITIO,
+      image: SITIO + "img/motion/hero-optimizador-final.webp",
+      author: { "@type": "Person", name: "Iván Pfoh" },
+      publisher: { "@id": SITIO + "#negocio" },
+      offers: { "@type": "Offer", price: PRECIO.replace(/\D/g, ""), priceCurrency: "ARS", availability: "https://schema.org/InStock", url: SITIO + "#comprar" },
+    },
+  ],
 };
 ---
 <Base
