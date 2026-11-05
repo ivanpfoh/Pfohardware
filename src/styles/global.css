@@ -201,3 +201,10 @@ html.mov [data-entra].entro { opacity: 1; transform: none; transition: opacity 9
 }
 @keyframes pagina-sale { to { opacity: 0; transform: scale(0.985); filter: blur(6px); } }
 @keyframes pagina-entra { from { opacity: 0; transform: translateY(28px); clip-path: inset(10% 0 0 0 round 18px); } }
+
+/* El nombre PfoHardware con el degradé de la marca: de blanco al verde y al celeste del logo */
+.nombre-marca {
+  background: linear-gradient(90deg, var(--texto) 15%, var(--marca-1) 70%, var(--marca-2)); /* taste-skill-ignore: degradé del nombre de marca */
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
