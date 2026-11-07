@@ -4,8 +4,8 @@ import Preguntas from "../components/Preguntas.astro";
 import { COMPRAR, EMAIL, INSTAGRAM, RECUPERAR } from "../consts";
 
 // Huella del archivo oficial: se actualiza en cada versión (build_nuitka.bat la muestra al compilar).
-const VERSION = "v2.10.0";
-const HASH = "6B58C4CAF068A07B29F57F7C6F499469B3D12F0B3312BE1E556238A12351BA71";
+const VERSION = "v2.10.1";
+const HASH = "86BAD1CEA35AB901CFD9F85CA463819F11031BE7CCEE9A588EFB9E45C3CA82EC";
 
 // Pantallas reales del programa (cuadros del video de HyperFrames y una captura del programa)
 const pantallas = [
@@ -63,10 +63,17 @@ const pantallas = [
             <summary>¿Cómo lo instalo?</summary>
             <div class="faq-cuerpo">
               <ol>
-                <li><strong>Descargá el archivo</strong> desde el mail de tu compra o desde “Recuperar mi clave”, descomprimí el <code>.zip</code> y, dentro de la carpeta, abrí <code>Optimizador_PfoHardware.exe</code>.</li>
-                <li><strong>Aceptá el permiso de administrador</strong> que te pide el programa.</li>
+                <li><strong>Descargá el archivo</strong> desde el mail de tu compra o desde “Recuperar mi clave”. Abrí el <code>.zip</code> y hacé doble clic en <code>Instalar Optimizador PfoHardware.exe</code>.</li>
+                <li><strong>Aceptá el permiso de administrador</strong> y tocá <strong>Siguiente</strong> y <strong>Finalizar</strong>. El programa se abre solo y te deja un acceso directo en el escritorio y en el menú Inicio.</li>
                 <li><strong>Ingresá tu clave</strong>, tocá <strong>Optimizar ahora</strong> y listo. Si querés volver atrás, usá <strong>Deshacer cambios</strong>.</li>
               </ol>
+            </div>
+          </details>
+          <details>
+            <summary>¿Cómo lo actualizo?</summary>
+            <div class="faq-cuerpo">
+              <p>Cuando hay una versión nueva, el programa te avisa: tocá <strong>Descargala</strong> y te trae a esta página. Bajá el archivo desde el mail de tu compra o desde “Recuperar mi clave” y abrí el instalador: se instala encima de la versión anterior y tu clave sigue activada.</p>
+              <p>Si antes lo usabas desde una carpeta que descomprimiste, después de instalar la versión nueva podés borrar esa carpeta.</p>
             </div>
           </details>
           <details>

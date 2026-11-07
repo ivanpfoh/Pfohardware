@@ -29,5 +29,11 @@ Después se comprime para la web (calidad pareja y arranque rápido):
 ffmpeg -i renders/hero-diagnostico.mp4 -an -c:v libx264 -preset veryslow -crf 27 -pix_fmt yuv420p -movflags +faststart ../../public/img/motion/hero-diagnostico.mp4
 ```
 
-`demo-optimizador` y `hero-optimizador` usan `-crf 28`, y `campo-portada` usa `-crf 30`. Los pósters (`*-poster.webp`, `*-inicio.webp`, `*-final.webp`) son el primer y el último cuadro. De `hero-optimizador` también salen `-programa.webp` (a los 2,6 s) y `-optimizando.webp` (a los 5,6 s).
-El material de la demo sale de las capturas reales del programa (`grabar_ui_v7.py`, en la carpeta de los reels).
+`demo-optimizador` y `hero-optimizador` usan `-crf 28`, y `campo-portada` usa `-crf 30`. Los pósters de `campo-portada` y `hero-diagnostico` (`*-inicio.webp` y `*-final.webp`) son el primer y el último cuadro del video.
+
+Desde la v2.10, el material de `demo-optimizador` y `hero-optimizador` sale de capturas reales del programa: en la carpeta del Optimizador, `py -3.13 scratch/capturas_video_v210.py 1.5` (quedan en `scratch/capturas/video_v210/`). Los pósters del Optimizador salen de esas mismas capturas, no de cuadros del video:
+
+- `hero-optimizador-programa.webp` (también `demo-optimizador-poster.webp`): la pantalla en reposo;
+- `hero-optimizador-optimizando.webp`: `anillo/050.png` (61 %);
+- `hero-optimizador-final.webp`: la pantalla final;
+- `hero-optimizador-inicio.webp` es solo el logo y no cambia.
