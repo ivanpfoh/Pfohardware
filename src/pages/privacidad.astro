@@ -1,0 +1,84 @@
+---
+import Base from "../layouts/Base.astro";
+import { ARREPENTIMIENTO, EMAIL } from "../consts";
+---
+<Base
+  titulo="Privacidad y términos · PfoHardware"
+  descripcion="Qué datos usa el Optimizador PfoHardware, para qué, y las condiciones de la compra y la licencia."
+  ruta="privacidad.html"
+>
+  <section class="arriba" aria-labelledby="privacidad-titulo">
+    <div class="contenedor">
+      <h1 id="privacidad-titulo" data-titulo><span class="linea"><span>Privacidad</span></span><span class="linea"><span>y términos.</span></span></h1>
+      <p class="bajada" data-entra>Qué datos se usan para venderte y activar el Optimizador, y qué condiciones tiene la compra. Actualizado el 9 de noviembre de 2026.</p>
+    </div>
+  </section>
+
+  <section class="cuerpo">
+    <div class="contenedor texto">
+      <h2>Privacidad</h2>
+
+      <h3>Quién es responsable</h3>
+      <p>Iván Pfoh, PfoHardware, Recoleta, Ciudad de Buenos Aires. Para cualquier consulta sobre tus datos: <a class="enlace" href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
+
+      <h3>Qué datos se guardan y para qué</h3>
+      <ul>
+        <li><strong>Al comprar:</strong> el mail con el que pagaste, el número de operación, la fecha y la clave que te tocó. Sirven para entregarte la clave, recuperarla si la perdés y atender un reclamo o una devolución.</li>
+        <li><strong>Al activar el programa:</strong> tu clave y un código que identifica a tu computadora, calculado con datos del equipo. Se guardan junto con la fecha de activación. Sirven para que cada licencia funcione en una sola PC.</li>
+        <li><strong>Cada vez que se abre:</strong> el programa consulta si la licencia sigue vigente y si hay una versión nueva.</li>
+        <li><strong>Si me escribís:</strong> lo que me cuentes por mail, WhatsApp o Instagram, para ayudarte.</li>
+      </ul>
+
+      <h3>Qué no se recopila</h3>
+      <p>El programa no envía tus documentos, fotos, contraseñas ni tu historial de navegación. Tampoco la lista de programas que tenés instalados. Esta web no usa cookies propias ni herramientas de seguimiento o publicidad.</p>
+
+      <h3>Lo que queda en tu computadora</h3>
+      <p>El registro de actividad, tus preferencias y la copia de los ajustes originales que usa Deshacer quedan en tu PC y no se envían. El informe para soporte solo se copia si tocás el botón, y solo llega a mí si vos me lo mandás.</p>
+
+      <h3>Con quién se comparten</h3>
+      <p>Tus datos no se venden. Para funcionar, intervienen estos servicios, cada uno con sus propias políticas:</p>
+      <ul>
+        <li><strong>Mercado Pago:</strong> procesa el pago. Nunca veo los datos de tu tarjeta.</li>
+        <li><strong>Google:</strong> ahí están la hoja de licencias y el sistema que activa el programa y manda el mail con la clave.</li>
+        <li><strong>Dropbox:</strong> aloja el archivo de descarga.</li>
+        <li><strong>GitHub:</strong> aloja esta web y, como cualquier servidor, puede registrar datos técnicos de la visita, como la dirección IP.</li>
+      </ul>
+
+      <h3>Cuánto tiempo y tus derechos</h3>
+      <p>Los datos se conservan mientras la licencia exista y durante el tiempo que exijan las normas aplicables. Podés pedir acceder a tus datos, corregirlos o eliminarlos escribiendo a <a class="enlace" href={`mailto:${EMAIL}`}>{EMAIL}</a>. Si los eliminás, la licencia deja de poder validarse.</p>
+      <p>Como titular de los datos, podés ejercer el derecho de acceso en forma gratuita a intervalos no inferiores a seis meses, salvo que acredites un interés legítimo (Ley 25.326, art. 14, inc. 3). La Agencia de Acceso a la Información Pública, órgano de control de esa ley, atiende las denuncias y los reclamos por incumplimiento de las normas sobre datos personales.</p>
+
+      <h2>Términos de compra y uso</h2>
+
+      <h3>Qué comprás</h3>
+      <p>Una licencia del Optimizador PfoHardware para <strong>una computadora con Windows 11 de 64 bits</strong>, con pago único y sin suscripción. El programa necesita permiso de administrador e internet para activarse.</p>
+
+      <h3>Arrepentimiento y devolución</h3>
+      <p>Tenés 10 días corridos para arrepentirte de la compra (Ley 24.240). Podés pedirlo con el <a class="enlace" href={ARREPENTIMIENTO} target="_blank" rel="noopener noreferrer">botón de arrepentimiento</a>. Si se devuelve el dinero, la licencia se desactiva.</p>
+
+      <h3>Qué podés esperar</h3>
+      <p>El programa ajusta Windows para aprovechar mejor tu equipo. La mejora depende de cada PC y de cada juego, por lo que no se promete un resultado o un aumento de FPS determinado. No reemplaza el hardware ni una reparación.</p>
+
+      <h3>Volver atrás</h3>
+      <p>Antes de optimizar, el programa guarda una copia de tu configuración, y <strong>Deshacer cambios</strong> la restaura. Los archivos temporales y lo que elijas borrar, como la Papelera, no se pueden recuperar con Deshacer. Te recomendamos mantener copias de seguridad de tus archivos importantes.</p>
+
+      <h3>Uso de la licencia</h3>
+      <p>La licencia es personal. No se puede revender, compartir ni usar para esquivar la activación. Una licencia usada de esa forma, o de una compra devuelta o desconocida, se puede desactivar.</p>
+
+      <h3>Soporte y tus derechos</h3>
+      <p>Si tenés un problema, escribime a <a class="enlace" href={`mailto:${EMAIL}`}>{EMAIL}</a>. Nada de lo que dice esta página limita los derechos que te da la ley de defensa del consumidor.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .arriba { padding: calc(var(--header) + clamp(56px, 9vw, 128px)) 0 clamp(40px, 5vw, 72px); background: var(--campo-1); }
+  .bajada { margin-top: 32px; max-width: 34em; font-size: 1.15rem; }
+  .cuerpo { padding: clamp(56px, 7vw, 96px) 0 clamp(72px, 9vw, 128px); background: var(--campo-2); }
+  .texto > * { max-width: 44em; }
+  .texto h2 { font-size: clamp(1.6rem, 2.8vw, 2.4rem); }
+  .texto h2:not(:first-child) { margin-top: clamp(56px, 7vw, 88px); }
+  .texto h3 { margin-top: 36px; margin-bottom: 10px; font-size: 1.15rem; }
+  .texto ul { display: grid; gap: 10px; margin: 12px 0 0; padding-left: 1.2em; }
+  .texto p { margin: 0 0 12px; }
+</style>

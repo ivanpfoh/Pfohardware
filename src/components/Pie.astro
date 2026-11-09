@@ -31,7 +31,10 @@ import { ARREPENTIMIENTO, EMAIL, GITHUB, INSTAGRAM } from "../consts";
     <p class="pie-nombre" aria-hidden="true" data-nombre><span class="nombre-marca">PfoHardware</span></p>
     <div class="pie-abajo">
       <span>© 2026 Iván Pfoh, PfoHardware</span>
-      <a href={ARREPENTIMIENTO} target="_blank" rel="noopener noreferrer">Botón de arrepentimiento</a>
+      <span class="pie-legales">
+        <a href="privacidad.html">Privacidad y términos</a>
+        <a href={ARREPENTIMIENTO} target="_blank" rel="noopener noreferrer">Botón de arrepentimiento</a>
+      </span>
     </div>
   </div>
 </footer>
@@ -52,6 +55,7 @@ import { ARREPENTIMIENTO, EMAIL, GITHUB, INSTAGRAM } from "../consts";
   }
   .pie-abajo { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--pie); font-size: var(--t-chico); }
   .pie-abajo a { color: var(--pie); }
+  .pie-legales { display: inline-flex; flex-wrap: wrap; gap: 8px 24px; }
   @media (max-width: 760px) {
     .pie-grilla { grid-template-columns: 1fr; }
   }
