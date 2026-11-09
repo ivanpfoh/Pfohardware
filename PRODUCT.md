@@ -12,7 +12,7 @@ Astro (chosen by Iván on 2026-10-30), static output deployed to GitHub Pages th
 
 ## Users
 
-- **Primary:** people in Argentina with a Windows 10 or 11 PC that feels slow, or who want more performance in games, and who would rather fix it themselves with one click than take the PC to a technician. They pay once, with Mercado Pago.
+- **Primary:** people in Argentina with a Windows 11 PC that feels slow, or who want more performance in games, and who would rather fix it themselves with one click than take the PC to a technician. They pay once, with Mercado Pago.
 - **Secondary:** people in Capital Federal (Recoleta and around) with a PC, notebook or console that needs a diagnosis, cleaning, upgrade, repair, formatting or remote support. They want a clear diagnosis and a quote before paying for anything.
 - **Returning buyers:** they need their key or the download again. The Optimizer itself opens `descarga.html` from its "new version" notice.
 
@@ -31,7 +31,7 @@ The Optimizer is made, used and personally supported by the same technician who 
 - Right of withdrawal: 10 calendar days (Ley 24.240), through the "Botón de arrepentimiento" (WhatsApp link). If a refund is requested, the licence is deactivated.
 - Contact for the service: email (ivanpfohh85@gmail.com) and Instagram (@pfohardware). WhatsApp is used only for the withdrawal button (Iván's decision, 2026-10-30).
 - Two modes in the program: "Optimización completa" and "Solo juegos". The second one also sets an NVIDIA or Intel graphics card to maximum performance, without touching startup programs or privacy.
-- Requirements: Windows 10 or 11 (64-bit), any Intel or AMD processor, 2 GB of RAM or more, administrator permission.
+- Requirements: Windows 11 (64-bit), any Intel or AMD processor, 2 GB of RAM or more, administrator permission.
 - Windows SmartScreen may warn on first run because the program has no commercial code signature; the FAQ explains "Más información" → "Ejecutar de todas formas".
 
 ## Capabilities and Constraints

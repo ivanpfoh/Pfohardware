@@ -8,7 +8,7 @@ related_targets: []
 # Surface brief: home (index)
 
 Scope: the home page (src/pages/index.astro). Visitor mode: Persuade.
-Audience and job: Windows 10/11 users in Argentina whose PC feels slow; the page's first job is selling the Optimizer ($10.000 ARS, single payment), second the technical service, third key recovery.
+Audience and job: Windows 11 users in Argentina whose PC feels slow; the page's first job is selling the Optimizer ($10.000 ARS, single payment), second the technical service, third key recovery.
 Proof on hand: the real program screens, the HyperFrames videos, real job photos. Constraints: no invented numbers, never reveal concrete tweaks, Apps Script buy/recover links unchanged, light on phones, prefers-reduced-motion respected.
 
 ## Direction contract
