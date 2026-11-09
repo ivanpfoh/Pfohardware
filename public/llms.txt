@@ -6,7 +6,7 @@
 
 - Programa para Windows 11 (64 bits) que deja la PC más fluida con un clic.
 - Es fácil de usar, pensado para quien nunca tocó la configuración de su PC.
-- Tiene dos modos: Optimización completa y Solo juegos.
+- Tiene dos modos: Optimización completa, para cualquier PC con Windows 11, y Solo juegos, para Windows 11 con placa de video NVIDIA.
 - Todo lo que cambia se puede deshacer con el botón Deshacer cambios.
 - Se puede volver a usar cada tanto para mantener la PC estable y rápida; el programa avisa cuando pasó un mes desde la última vez.
 - En su engranaje trae más herramientas: desfragmentar y optimizar discos, ver la salud de los discos y de la batería, y saber qué conviene mejorar.
