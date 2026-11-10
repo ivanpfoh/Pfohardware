@@ -1,5 +1,8 @@
 // Datos que se repiten en toda la web. Los links de compra y recuperación son los de Apps Script:
-// no cambian. El link de descarga de Dropbox es solo para compradores y nunca va acá.
+// no cambian. El link de descarga del Optimizador (Dropbox) es solo para compradores y nunca va acá.
+// El Organizador de Materias sí se descarga directo desde la web: su link público es este.
+export const DESCARGA_ORGANIZADOR =
+  "https://www.dropbox.com/scl/fi/72s8ax5et3aolqlng1pur/PfoHardware-Organizador-3.0.0.zip?rlkey=691n5kh5enq1dx5rc6q0ik6gs&st=xocukyn8&e=1&dl=1";
 export const APPS_SCRIPT =
   "https://script.google.com/macros/s/AKfycbyr9_yR_DE78hONf0mHfDxOg-oL7I5zdVxnt41NdRxakUYWLjaT5GJ92_GQ05ACSTOt/exec";
 export const COMPRAR = `${APPS_SCRIPT}?accion=comprar`;

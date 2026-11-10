@@ -1,9 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
 import Icono from "../components/Icono.astro";
-import { COMPRAR } from "../consts";
+import { COMPRAR, DESCARGA_ORGANIZADOR } from "../consts";
 
-// Lista de programas: el Optimizador disponible actualmente y los próximos proyectos en desarrollo.
+// Lista de programas: el Optimizador (se compra), el Organizador (descarga directa) y los próximos proyectos.
 const programas = [
   {
     id: "optimizador",
@@ -16,6 +16,17 @@ const programas = [
     comprar: COMPRAR,
   },
   {
+    id: "organizador",
+    nombre: "Organizador de Materias",
+    estado: "disponible",
+    etiqueta: "Disponible",
+    subtitulo: "Apuntes, subrayado y pendientes de cada materia",
+    texto: "Programa de escritorio para estudiar sin perder nada, 100% offline. Cada materia tiene una hoja donde subís tus PDF o Word y trabajás el texto como en Word: lo subrayás con un pincel del color que quieras y el programa te arma el resumen con todo lo marcado. Las fórmulas y fotos que no se pueden pasar a texto quedan dibujadas en su lugar. Al costado, la lista de TPs, parciales y finales que te faltan, y el estado de cada materia: cursando, falta el final, previa o aprobada.",
+    icono: "calendario",
+    descargar: DESCARGA_ORGANIZADOR,
+    version: "3.0.0",
+  },
+  {
     id: "normalizador",
     nombre: "Normalizador de Bases de Datos",
     estado: "proximamente",
@@ -24,20 +35,11 @@ const programas = [
     texto: "Herramienta de escritorio pensada para estudiantes y desarrolladores que necesitan diseñar y normalizar bases de datos relacionales sin complicaciones. Analiza atributos y dependencias, descompone tablas paso a paso hasta 3FN y BCNF para eliminar redundancias y anomalías de actualización, y genera directamente el script SQL limpio y estructurado.",
     icono: "baseDatos",
   },
-  {
-    id: "organizador",
-    nombre: "Organizador de Materias",
-    estado: "proximamente",
-    etiqueta: "Próximamente",
-    subtitulo: "Seguimiento académico, correlatividades y cursada",
-    texto: "Aplicación ligera para organizar tu carrera universitaria o terciaria en un solo lugar y de forma 100% offline. Visualizá el árbol de correlatividades para saber qué materias podés cursar o rendir, coordiná horarios semanales, gestioná fechas de parciales y entregas, y llevá el cálculo automático de promedios y avance de tu plan de estudio.",
-    icono: "calendario",
-  },
 ];
 ---
 <Base
   titulo="Programas para Windows · PfoHardware"
-  descripcion="Los programas de PfoHardware para Windows, hechos por Iván Pfoh. El Optimizador de Sistema y próximos proyectos de software: Normalizador de bases de datos y Organizador de materias."
+  descripcion="Los programas de PfoHardware para Windows, hechos por Iván Pfoh. El Optimizador de Sistema, el Organizador de Materias para descargar y, próximamente, el Normalizador de bases de datos."
   ruta="programas.html"
   actual="programas"
 >
@@ -91,7 +93,7 @@ const programas = [
                 <div class="preview-cuerpo preview-org">
                   <div class="org-progreso">
                     <div class="org-progreso-head">
-                      <span>Plan de carrera</span>
+                      <span>Pendientes hechos</span>
                       <strong class="num">68%</strong>
                     </div>
                     <div class="org-barra"><div class="org-barra-fill"></div></div>
@@ -115,9 +117,9 @@ const programas = [
                       <small>En curso</small>
                     </li>
                     <li class="materia-item pendiente">
-                      <span class="materia-icono">🔒</span>
+                      <span class="materia-icono">✎</span>
                       <span>Redes de Datos</span>
-                      <small>Correlativa</small>
+                      <small>Falta el final</small>
                     </li>
                   </ul>
                 </div>
@@ -145,6 +147,17 @@ const programas = [
                   <>
                     <a class="boton boton-marca boton-grande" href={p.comprar}>Comprar <Icono nombre="flecha" tam={18} /></a>
                     <a class="boton boton-panel boton-grande" href={p.conocer}>Conocerlo</a>
+                  </>
+                ) : p.descargar ? (
+                  <>
+                    <a class="boton boton-marca boton-grande" href={p.descargar} rel="noopener">
+                      <Icono nombre="descarga" tam={18} /> Descargar para Windows
+                    </a>
+                    <p class="nota-descarga">
+                      Versión {p.version} · instalador en un .zip de unos 88 MB. Como el instalador no tiene firma digital,
+                      Windows puede mostrar «Windows protegió su PC»: tocá <strong>Más información</strong> y después
+                      <strong>Ejecutar de todas formas</strong>.
+                    </p>
                   </>
                 ) : (
                   <>
@@ -288,6 +301,9 @@ const programas = [
     border-radius: var(--radio); background: #081216; border: 1px solid #1B3239;
     color: var(--marca-2); font-weight: 600; font-size: 0.95rem;
   }
+
+  .nota-descarga { flex: 1 1 100%; max-width: 40em; margin: 0; font-size: var(--t-chico); line-height: 1.55; color: var(--texto-dim); }
+  .nota-descarga strong { color: var(--texto); font-weight: 600; }
 
   .pronto { margin-top: 36px; color: var(--texto-dim); font-size: 1.05rem; max-width: 42em; line-height: 1.6; }
   @media (max-width: 900px) {
